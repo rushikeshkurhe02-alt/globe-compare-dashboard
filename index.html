@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F6F7F9" />
+    <title>Atlas Compare — World Data Explorer & Side-by-Side Comparison</title>
+    <meta name="description" content="Explore 250+ nations and compare key demographic, economic, and social indicators side-by-side with live data from the World Bank and global open data." />
+    <meta property="og:title" content="Atlas Compare — World Data Explorer & Side-by-Side Comparison" />
+    <meta property="og:description" content="Explore 250+ nations and compare key demographic, economic, and social indicators side-by-side with live data from the World Bank and global open data." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Google Fonts: Fraunces (editorial serif) & Inter (body & numbers) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Light-first theme script: light by default, persists dark only if explicitly chosen -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('atlas_theme');
+          const isDark = stored === 'dark';
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) metaTheme.setAttribute('content', '#0E1A2F');
+          } else {
+            document.documentElement.classList.remove('dark');
+            const metaTheme = document.querySelector('meta[name="theme-color"]');
+            if (metaTheme) metaTheme.setAttribute('content', '#F6F7F9');
+          }
+        } catch (e) {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-bg-main text-text-primary antialiased selection:bg-brand-indigo selection:text-white transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

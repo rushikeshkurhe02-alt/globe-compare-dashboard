@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "Comparison": {
+      "title": "Comparison",
+      "description": "A user's saved country comparison configuration.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User-assigned title for the saved comparison.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "countries": {
+          "type": "array",
+          "description": "List of 2 to 3 country cca3 codes being compared.",
+          "items": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 3
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the comparison was created."
+        }
+      },
+      "required": ["name", "countries", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/comparisons/{comparisonId}": {
+      "schema": "Comparison",
+      "description": "Private country comparisons created and owned by a specific user."
+    }
+  }
+}

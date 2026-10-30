@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Compare",
+  "description": "Public Data Explorer to discover and compare world countries side by side using live data from the World Bank and global open data repositories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

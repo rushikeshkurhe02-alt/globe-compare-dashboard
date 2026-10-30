@@ -1,0 +1,17 @@
+{
+  "name": "Atlas Compare",
+  "short_name": "AtlasCompare",
+  "description": "Public Data Explorer to discover and compare world countries side by side using live data from REST Countries and the World Bank.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0B10",
+  "theme_color": "#0A0B10",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
